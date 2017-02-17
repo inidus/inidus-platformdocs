@@ -1,2 +1,2 @@
 #!/bin/bash
-bundle exec jeykll build
+bundle exec jekyll build
