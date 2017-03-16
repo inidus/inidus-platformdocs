@@ -5,22 +5,34 @@ permalink: SSP1-account-management.html
 summary: This section describes the tasks associated with managing your Operon account.
 ---
 
-<img src="\images/construction.jpg" alt="Under construction">
-
 ## Create account
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+If you are not registered for an account on the Operon Cloud, you can sign up by selecting ***Register a new account*** on the ***Welcome*** page:
 
-## Log in / log out
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="\images\self_service_welcome.png" alt="Welcome Page">
 
-## Administer profile
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The ***Registration*** screen allows for basic details, such as username, email address and password to be completed. Alternatively you can use Social Media accounts to set up your account.
 
-## Configure personal settings / change password
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="\images\self_service_register.png" alt="Register">
 
-## Reset password
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Log in / Reset password
+Once you have created your account, you can sign in from the ***Welcome*** page, either by using your Operon username and password or by using your Social Media accounts.
 
-## Select or change service plan
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="\images\self_service_sign_in.png" alt="Sign in">
+
+On the ***Sign in*** page you can also set a ***Remember me*** option and ***Reset your password***.
+
+<img src="\images\self_service_reset_password.png" alt="Reset password">
+
+## Settings/Change Password/Sign out
+
+<img src="\images\self_service_account_menu.png" alt="Account menu">
+
+When you are signed into your account, you can change your name, email and language settings from the ***Account*** menu, ***Settings*** option.
+
+<img src="\images\self_service_user_settings.png" alt="Settings">
+
+From the same menu you can also ***change your password***.
+
+<img src="\images\self_service_change_password.png" alt="Change Password">.
+
+The ***Sign out*** option takes you to back to ***Welcome*** page.
