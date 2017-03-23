@@ -19,7 +19,7 @@ To find out more about the rationale and concepts behind the open platform appro
 
 ## Create an Account
 
-Your first step to using the Operon Cloud is to create an account. Tier 1 usage of the Operon Cloud is free of charge and no credit card details are necessary to create an account. To create your account just click here.
+Your first step to using the Operon Cloud is to create an account. Tier 1 usage of the Operon Cloud is free of charge and no credit card details are necessary to create an account. To create your account just [click here](http://c4h.noesis.limited/#/register).
 
 ## Build a Operino
 
@@ -32,7 +32,3 @@ All interaction with the Operon Cloud is through a set of REST APIs that are pro
 ## Connect you First Application
 
 Once you understand the basics you will be ready to connect your first application to the Operon Cloud. You can build applications to run on the Operon Cloud using virtually any web development language of your choice.
-
-## Next Steps
-
-{% include links.html %}
