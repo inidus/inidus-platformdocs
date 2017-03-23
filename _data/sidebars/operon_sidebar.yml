@@ -44,10 +44,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Platform status
-      url: /SSP0-platform-status.html
-      output: web, pdf
-
     - title: Account Management
       url: /SSP1-account-management.html
       output: web, pdf
@@ -56,20 +52,12 @@ entries:
       url: /SSP2-resource-management.html
       output: web, pdf
 
-    - title: Organisation Management
-      url: /SSP3-organisation-management.html
-      output: web, pdf
-
     - title: Use Resources
       url: /SSP4-use-resources.html
       output: web, pdf
 
-    - title: Backup and Restore
-      url: /SSP5-backup.html
-      output: web, pdf
-
-    - title: Billing and Payment
-      url: /SSP6-billing-and-payment.html
+    - title: Administration
+      url: /SSP7-admin.html
       output: web, pdf
 
   - title: EHR Explorer
@@ -143,12 +131,24 @@ entries:
 
     folderitems:
 
-    - title: Clinical Knowledge Manager (CKM)
-      url: /CKM-under-construction.html
+    - title: Clinical Knowledge Manager Overview
+      url: /CC0-CKM-overview.html
       output: web, pdf
 
-    - title: GitHub
-      url: /github-under-construction.html
+    - title: CKM Sign-up
+      url: /CC1-CKM-signup.html
+      output: web, pdf
+
+    - title: CKM Template review
+      url: /CC2-CKM-template-review.html
+      output: web, pdf
+
+  - title: Implementation guidance
+    output: web, pdf
+
+    folderitems:
+    - title: Lab Test Implementation Guidance
+      url: /IMP1-lab-test-imp-guide.html
       output: web, pdf
 
   - title: openEHR Clinical Data Repository

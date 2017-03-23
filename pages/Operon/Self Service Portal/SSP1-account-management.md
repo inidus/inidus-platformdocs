@@ -14,16 +14,18 @@ The ***Registration*** screen allows for basic details, such as username, email 
 
 <img src="\images\self_service_register.png" alt="Register">
 
-## Log in / Reset password
+## Log in
 Once you have created your account, you can sign in from the ***Welcome*** page, either by using your Operon username and password or by using your Social Media accounts.
 
 <img src="\images\self_service_sign_in.png" alt="Sign in">
+
+## Reset Password
 
 On the ***Sign in*** page you can also set a ***Remember me*** option and ***Reset your password***.
 
 <img src="\images\self_service_reset_password.png" alt="Reset password">
 
-## Settings/Change Password/Sign out
+## Settings
 
 <img src="\images\self_service_account_menu.png" alt="Account menu">
 
@@ -31,8 +33,12 @@ When you are signed into your account, you can change your name, email and langu
 
 <img src="\images\self_service_user_settings.png" alt="Settings">
 
-From the same menu you can also ***change your password***.
+## Change password
+
+To change your password, you must be logged in. Go to the ***Settings*** option on the ***Account*** menu and select ***Change your password***.
 
 <img src="\images\self_service_change_password.png" alt="Change Password">.
 
-The ***Sign out*** option takes you to back to ***Welcome*** page.
+## Sign out
+
+The ***Sign out*** option on the ***Account*** menu takes you to back to ***Welcome*** page.
