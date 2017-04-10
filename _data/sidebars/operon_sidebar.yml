@@ -32,14 +32,6 @@ entries:
       url: /BASIC3-list-of-services.html
       output: web, pdf
 
-    - title: About Operon
-      url: /BASIC4-about-operon.html
-      output: web, pdf
-
-    - title: Support
-      url: /BASIC5-support.html
-      output: web, pdf
-
   - title: Self Service Portal
     output: web, pdf
     folderitems:
@@ -50,10 +42,6 @@ entries:
 
     - title: Resource Management
       url: /SSP2-resource-management.html
-      output: web, pdf
-
-    - title: Use Resources
-      url: /SSP4-use-resources.html
       output: web, pdf
 
     - title: Administration
@@ -149,44 +137,4 @@ entries:
     folderitems:
     - title: Lab Test Implementation Guidance
       url: /IMP1-lab-test-imp-guide.html
-      output: web, pdf
-
-  - title: openEHR Clinical Data Repository
-    output: web, pdf
-
-    folderitems:
-    - title: Quick reference
-      url: /CDR-QR-under-construction.html
-      output: web, pdf
-
-  - title: Termlex
-    output: web, pdf
-
-    folderitems:
-    - title: Introduction
-      url: /termlex-intro-under-construction.html
-      output: web, pdf
-
-  - title: Document Sharing (XDS)
-    output: web, pdf
-
-    folderitems:
-    - title: Introduction
-      url: /docshare-intro-under-construction.html
-      output: web, pdf
-
-  - title: Master Patient Index (MPI)
-    output: web, pdf
-
-    folderitems:
-    - title: Introduction
-      url: /MPI-intro-under-construction.html
-      output: web, pdf
-
-  - title: Health Provider Registry
-    output: web, pdf
-
-    folderitems:
-    - title: Introduction
-      url: /HPR-intro-under-construction.html
       output: web, pdf

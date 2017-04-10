@@ -2,20 +2,20 @@
 title:  "Account Management"
 sidebar: operon_sidebar
 permalink: SSP1-account-management.html
-summary: This section describes the tasks associated with managing your Operon account.
+summary: This section describes the tasks associated with managing your platform account.
 ---
 
 ## Create account
-If you are not registered for an account on the Operon Cloud, you can sign up by selecting ***Register a new account*** on the ***Welcome*** page:
+If you are not registered for an account on the platform, you can sign up by selecting ***Register a new account*** on the ***Welcome*** page:
 
-<img src="\images\self_service_welcome.png" alt="Welcome Page">
+<img src="\images\self_service_welcome1.png" alt="Welcome Page">
 
 The ***Registration*** screen allows for basic details, such as username, email address and password to be completed. Alternatively you can use Social Media accounts to set up your account.
 
 <img src="\images\self_service_register.png" alt="Register">
 
 ## Log in
-Once you have created your account, you can sign in from the ***Welcome*** page, either by using your Operon username and password or by using your Social Media accounts.
+Once you have created your account, you can sign in from the ***Welcome*** page, either by using your platform username and password or by using your Social Media accounts.
 
 <img src="\images\self_service_sign_in.png" alt="Sign in">
 
