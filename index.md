@@ -21,7 +21,7 @@ To find out more about the rationale and concepts behind the open platform appro
 
 Your first step to using the platform is to create an account. Tier 1 usage is free of charge and no credit card details are necessary to create an account. To create your account just [click here](http://c4h.noesis.limited/#/register).
 
-## Build a Operino
+## Build an Operino
 
 The building blocks of the platform are called Operinos. An Operino provides a container for a set of services from the platform that you need for a particular application To use the platform you need at least one Operino, although you can create as many as you need.
 
