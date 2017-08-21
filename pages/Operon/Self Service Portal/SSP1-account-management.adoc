@@ -1,0 +1,46 @@
+---
+title:  "Account Management"
+
+permalink: SSP1-account-management.html
+summary: This section describes the tasks associated with managing your platform account.
+---
+
+== Create account
+
+If you are not registered for an account on the platform, you can sign up by selecting *_Register a new account_* on the *_Welcome_* page:
+
+image:/images/self_service_welcome1.png[Welcome Page]
+
+The *_Registration_* screen allows for basic details, such as username, email address and password to be completed. Alternatively you can use Social Media accounts to set up your account.
+
+image:/images/self_service_register.png[Register]
+
+== Log in
+
+Once you have created your account, you can sign in from the *_Welcome_* page, either by using your platform username and password or by using your Social Media accounts.
+
+image:/images/self_service_sign_in.png[Sign in]
+
+== Reset Password
+
+On the *_Sign in_* page you can also set a *_Remember me_* option and *_Reset your password_*.
+
+image:/images/self_service_reset_password.png[Reset password]
+
+== Settings
+
+image:/images/self_service_account_menu.png[Account menu]
+
+When you are signed into your account, you can change your name, email and language settings from the *_Account_* menu, *_Settings_* option.
+
+image:/images/self_service_user_settings.png[Settings]
+
+== Change password
+
+To change your password, you must be logged in. Go to the *_Settings_* option on the *_Account_* menu and select *_Change your password_*.
+
+image:/images/self_service_change_password.png[Change Password].
+
+== Sign out
+
+The *_Sign out_* option on the *_Account_* menu takes you to back to *_Welcome_* page.

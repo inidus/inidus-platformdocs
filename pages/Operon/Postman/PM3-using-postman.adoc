@@ -1,0 +1,187 @@
+---
+title:  "Using Postman with Ehrscape"
+
+permalink: PM3-using-postman.html
+summary: This section contains instructions how to use the Postman tool to create sessions, retrieve data, persist data and run a basic query
+---
+
+== Create Session
+
+The first step is to create an openEHR session and retrieve the ***sessionId*** token. This allows subsequent API calls to be made without needing to login on each occasion.
+
+Navigate to the *_session_* folder and highlight *_Create Session_* on the left, then click on the *_Send_* button. The required credentials are automatically filled in from the Pre-sets file (see *_Navigating Postman_* section above)
+
+image:/images/CreateSession.jpg[Create Session,50%]
+
+Click the *_Scroll to responses_* button in the bottom right hand corner to display the response details.
+
+The screenshot below shows the session Id which has been returned in the call.
+
+image:/images/CreateSessionResult.jpg[Session ID,50%]
+
+== Get EHR Identifier
+
+The next step is to get the patient’s internal EHR identifier by sending their external identifier (in this case NHS Number). The ehrId is a unique string which, for security reasons, cannot be associated with the patient, if for instance their openEHR records were leaked.
+
+Select *_Get ehrStatus from subjectId_* in the *_ehr_* folder and then click on the *_Send_* button. Again, the patient’s NHS number is taken from the Pre-sets file and is therefore filled in automatically.
+
+image:/images/GetEhrId.jpg[Get EHRId]
+
+Click on the *_Scroll to responses_* button in the bottom right hand corner to display the response details.
+
+The JSON snippet below shows the ehrId for our dummy patient.
+
+image:/images/GetEhrIdResult.jpg[Display EHRId,50%]
+
+To store the returned ehrId as a pre-set for the selected environment, highlight the string in the response details, right mouse click, set the environment (*C4H Ripple OSI in this example*) and then select *_ehrId_* from the list of attributes.
+
+image:/images/StoreEhrIDAsPreset.jpg[Store EHRId,50%]
+
+== Retrieve Composition ID
+
+Now that we have the patient’s EHR identifier, we can use it to locate and retrieve some clinical details. We use an Archetype Query Language (AQL) call to retrieve a list of the identifiers and dates of existing Nursing Vital Signs Observations Composition records. Compositions are document-level records which act as the container for all openEHR patient data.
+
+The name/value of the Composition is the root name of the templates composition archetype (case-sensitive). In a real-world example we would query on other factors to ensure we had the ‘correct’ list.
+
+The query we need to run in order to get the composition Id for the most recent vital signs composition for the selected patient is as follows:
+
+image:/images/RetrieveCompositionIdExplanation.jpg[Retrieve compositionId explanation,50%]
+
+At this stage you don’t need to worry about the exact syntax and how to create an AQL query. These topics are covered elsewhere, and the Specifications provide the required details.
+
+Open the *_query_* folder and select *_Ad-hoc query_*
+
+image:/images/RetrieveCompositionIdFolderSelect.jpg[Retrieve CompositionId]
+
+This is the query string in a format which can be copied and pasted:
+[source,sql]
+----
+select
+ a/uid/value as compositionId,
+ a/context/start_time/value as start_time
+from EHR e[ehr_id/value='{{ehrId}}']
+ contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
+where a/name/value= 'Nursing Vital Signs Observations'
+order by a/context/start_time/value desc
+offset 0 limit 1
+----
+In the Ad-hoc Query window click on *_Param_* and paste the query string above into the *_Value_* field, then click on the *_Send_* button.
+
+image:/images/RetrieveCompositionIdString.jpg[Get CompositionId,50%]
+
+Click the *_Scroll to response_* button in the bottom right hand corner to display the response details. The *_compositionId_* element in the response is the unqique identifier for the composition and the *_start_time_* is the time that the document was authored.
+
+image:/images/RetrieveCompositionIdResult.jpg[Get CompositionID result,50%]
+
+We will use the results of this query to retrieve the full composition, so the final action is to store the composition Id as a pre-set.
+
+Highlight the string in the response details, right mouse click, set the environment (***C4H Ripple OSI*** in this example) and then select *_compositionId_* from the list of attributes
+
+image:/images/StoreCompositionIdAsPreset.jpg[Store compositionId,50%]
+
+== Retrieve Composition
+The next step is to retrieve the composition itself, based on the compositionId we stored in the previous step.
+
+Navigate to the *_composition_* folder and highlight *_Read Composition JSON FLAT_*, then click the *_Send_* button
+
+image:/images/RetrieveComposition.jpg[Retrieve composition,50%]
+
+The result is shown as a FLAT JSON file below
+
+image:/images/RetrieveCompositionResult.jpg[Retrieve composition result,50%]
+
+Other formats are JSON RAW, XML RAW or JSON STRUCTURED – the snippets below show part of the Pulse data
+
+image:/images/RetrieveCompositionResultOtherFormats1.jpg[JSON RAW,50%]
+
+image:/images/RetrieveCompositionResultOtherFormats2.jpg[XML RAW,50%]
+
+image:/images/RetrieveCompositionResultOtherFormats3.jpg[JSON STRUCTURED,50%]
+
+== Persist Composition
+The next step is to persist a new composition. The data in the composition is validated against a template, and the first action is to set the correct template Id for composition to be persisted.
+
+Navigate to the *_Template_* folder and highlight *_List available templates_*, then click the *_Send_* button. Highlight the *_Vital Signs Encounter template_* in the list of available templates, right mouse click, set the environment (***C4H Ripple OSI*** in this example) and then select *_templateId_* from the list of attributes
+
+image:/images/ListTemplates.jpg[Set templateId,50%]
+
+Once the template Id is set, we can commit a composition. The following string is an example of a vital signs composition:
+----
+"ctx/language": "en",
+"ctx/territory": "GB",
+"ctx/composer_name": "Hazel Smith",
+"ctx/time": "2015-12-10T02:19:00.000Z",
+"ctx/health_care_facility|id": "999999-345",
+"ctx/health_care_facility|name": "Northumbria Community NHS",
+"ctx/id_namespace": "NHS-UK",
+"ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
+"nursing_vital_signs_observations/vital_signs:0/respirations:0/any_event:0/rate|magnitude": 22,
+"nursing_vital_signs_observations/vital_signs:0/respirations:0/any_event:0/rate|unit": "/min",
+"nursing_vital_signs_observations/vital_signs:0/pulse:0/any_event:0/heart_rate|magnitude": 101,
+"nursing_vital_signs_observations/vital_signs:0/pulse:0/any_event:0/heart_rate|unit": "/min",
+"nursing_vital_signs_observations/vital_signs:0/body_temperature:0/any_event:0/temperature|magnitude": 36.6,
+"nursing_vital_signs_observations/vital_signs:0/body_temperature:0/any_event:0/temperature|unit": "°C",
+"nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/systolic|magnitude": 100,
+"nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/systolic|unit": "mm[Hg]",
+"nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/diastolic|magnitude": 60,
+"nursing_vital_signs_observations/vital_signs:0/blood_pressure:0/any_event:0/diastolic|unit": "mm[Hg]",
+"nursing_vital_signs_observations/vital_signs:0/indirect_oximetry:0/any_event:0/spo2|numerator": 94,
+"nursing_vital_signs_observations/vital_signs:0/indirect_oximetry:0/any_event:0/spo2|denominator": 100,
+"nursing_vital_signs_observations/vital_signs:0/national_early_warning_score_rcp_uk:0/total_score": 3_*
+----
+As mentioned before, the exact syntax and how to create a composition will be covered elsewhere. At this stage you should just use the syntax string provided above.
+
+Navigate to the *_Composition_* folder and highlight *_Commit Composition JSON FLAT_*. Paste the text above into the Body text box on the right hand side and click on the *_Send_* button.
+
+image:/images/CommitComposition.jpg[Commit composition,50%]
+
+The result shows the composition Id for the newly committed composition.
+
+image:/images/CommitCompositionResult.jpg[Commit composition result,50%]
+
+== Run AQL Query
+The next step is to run a query on recent vital signs compositions and return a set of key data.
+
+Navigate to the *_query_* folder and select *_Ad-hoc Query_*.
+
+This is the query string we are going to use to retrieve the last 5 vital signs compositions and return the relevant readings. Once again, just to clarify: the exact syntax and how to create an AQL query will be covered elsewhere. At this stage you can just copy and paste the query syntax string shown below:
+
+[source,sql]
+----
+select
+ a/uid/value as compositionId,
+ a/context/start_time/value as start_time,
+ b_a/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/magnitude as Rate_magnitude,
+ b_b/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Heart_Rate_magnitude,
+ b_c/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Temperature_magnitude,
+ b_f/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude as Systolic_magnitude,
+ b_f/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude as Diastolic_magnitude,
+ b_g/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value/numerator as spO2_numerator,
+ b_h/data[at0001]/events[at0002]/data[at0003]/items[at0028]/value/magnitude as Total_Score_magnitude
+from EHR e[ehr_id/value='{{ehrId}}']
+ contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
+ contains (OBSERVATION b_a[openEHR-EHR-OBSERVATION.respiration.v1]
+  or OBSERVATION b_b[openEHR-EHR-OBSERVATION.pulse.v1]
+  or OBSERVATION b_c[openEHR-EHR-OBSERVATION.body_temperature.v1]
+  or OBSERVATION b_f[openEHR-EHR-OBSERVATION.blood_pressure.v1]
+  or OBSERVATION b_g[openEHR-EHR-OBSERVATION.indirect_oximetry.v1]
+  or OBSERVATION b_h[openEHR-EHR-OBSERVATION.news_rcp_uk.v1])
+where a/name/value= 'Nursing Vital Signs Observations'
+order by a/context/start_time/value desc
+----
+In the Ad-hoc query window click on *_Params_* and enter the query string into the *_Value_* field on the right hand side, then click the *_Send_* button.
+
+image:/images/RunAQLQuery.jpg[Run AQL Query,50%]
+
+The result set contains the last 5 vital signs compositions and the data points within the compositions.
+
+image:/images/RunAQLQueryResult.jpg[AQL Query Result,50%]
+
+== Close Session
+The final step is to close the openEHR session.
+
+To do this, navigate to the *_session_* folder and select *_Delete Session_*. Click on the *_Send_* button.
+
+The result will show a null sessionId, indicating that there is no open session.
+
+image:/images/CloseSession.jpg[Close Session,50%]

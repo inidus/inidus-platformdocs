@@ -1,0 +1,33 @@
+---
+title:  "Template Designer"
+permalink: openEHR2-template-designer.html
+summary: This section provides instructions how to install and configure the Template Designer tool
+---
+
+== Install Template Designer
+The Ocean Template Designer is a free download available at …
+
+http://www.openehr.org/download_files/TemplateDesigner/TemplateDesignerSetup_2.8.94.2.exe[Ocean Template Designer Latest Beta Release]
+
+Once installed you can run the Template Designer from the Desktop or Start Menu.
+
+image:/images/td_screen.png[Template Designer]
+
+Further details are available at the http://www.openehr.org/downloads/modellingtools[openEHR Modelling Tools Page].
+
+== Setup Template Designer
+Run the Template Designer from the Desktop or Start Menu.
+
+Go to *_Tools->Knowledge repository->Edit Repository List_*
+
+Add a new Repository e.g. *_openEHR Training_*
+
+image:/images/td_setup_repo_1.png[Template Designer Setup Repo]
+
+Complete these paths…
+
+Archetype Files:: ..\Documents\Archetypes\openehr_training\remote
+Working Archetype Files:: ..\Documents\openehr_training\local\archetypes
+Template Files:: ..\Documents\openehr_training
+
+image:/images/td_setup_repo_2.png[Template Designer Setup Repo finished]

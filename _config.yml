@@ -1,4 +1,3 @@
-
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
@@ -23,10 +22,10 @@ host: 127.0.0.1
 port: 3000
 # the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
 
-exclude:
-  - .idea/
-  - .gitignore
-exclude: [vendor]
+#exclude:
+#  - .idea/
+#  - .gitignore
+exclude: ['vendor', '*.md']
 
 # these are the files and directories that jekyll will exclude from the build
 
@@ -47,12 +46,26 @@ feedback_email: info@operon.systems
 highlighter: rouge
 # library used for syntax highlighting
 
-markdown: kramdown
-kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
- syntax_highlighter: rouge
+markdown: asciidoc
+
+asciidoc:
+  processor: asciidoctor
+  base_dir: :root
+  # default extensions, doesn't need to be specified, just for awareness purposes
+  ext: asciidoc,adoc,ad
+  attributes:
+    idprefix:
+    hardbreaks: true
+    imagesdir: '/images'
+    iconsdir: '{imagesdir}/icons'
+    icons: 'font'
+    safe: 'unsafe'
+
+#kramdown:
+# input: GFM
+# auto_ids: true
+# hard_wrap: false
+# syntax_highlighter: rouge
 
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
@@ -70,7 +83,7 @@ defaults:
       layout: "page"
       comments: true
       search: true
-      sidebar: home_sidebar
+      sidebar: operon_sidebar
   -
     scope:
       path: ""
@@ -89,16 +102,12 @@ defaults:
       layout: "post"
       comments: true
       search: true
-      sidebar: home_sidebar
+      sidebar: operon_sidebar
 
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
-- home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
+- operon_sidebar
 
 description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
 # the description is used in the feed.xml file

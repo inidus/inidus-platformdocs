@@ -1,0 +1,19 @@
+---
+title:  "Resources"
+permalink: openEHR3-resources.html
+summary: This section provides links to the various CKM resources and the ADL workbench tool
+---
+
+== CKM Resources
+http://www.openehr.org/ckm/[openEHR CKM]:: Models maintained by the international openEHR community.
+http://dcm.nehta.org.au/ckm/[NEHTA CKM]:: Models maintained by NEHTA for the Australian national eHealth program.
+http://clinicalmodels.org.uk/ckm[UK CKM]:: Models maintained by a consortium of UK health organisations.
+http://ckm.hscic.gov.uk/ckm/[HSCIC CKM]:: Models maintained by the UK Health and Socical Care Information Centre.
+http://arketyper.no/ckm/[Norwegian CKM]:: Models maintained by the Norwegian national eHealth program.
+http://ukz.ezdrav.si/ckm/OKM.html[Slovenian CKM]:: Models maintained by the Slovenian national eHealth program.
+
+== ADL workbench
+The Archetype Workbench is a technical tool used for experimentation and testing, and it is not usually required by archetype authors.
+
+The latest version is available at
+http://www.openehr.org/downloads/ADLworkbench/home[openEHR ADL Archetype Workbench]

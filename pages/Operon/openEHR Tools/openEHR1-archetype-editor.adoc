@@ -1,0 +1,94 @@
+---
+title:  "Archetype Editor"
+permalink: openEHR1-archetype-editor.html
+summary: This section provides instructions on how to install and configure the Archetype Editor tool and download the archetypes from the international CKM repository
+---
+
+== Install Archetype Editor
+The Archetype Editor is the tool we use to create and adapt archetypes.
+
+image:/images/ae_screen.png[Archetype Editor]
+
+Download the http://www.openehr.org/download_files/archetype_editor/archetype_editor_2.8.972.1-windows_32bit.exe[latest version] of Archetype Editor.
+
+This installs the openEHR Archetype Editor (ArchetypeEditor.exe) in the folder …
+
+Windows-32:: C:\Program Files\openEHR\Archetype Editor
+Windows-64:: C:\Program Files(x86)\openEHR\Archetype Editor
+
+and should set up links on your Desktop or Start Menu etc.
+
+Further details are available at the http://www.openehr.org/downloads/archetypeeditor/home[openEHR Archetype Editor Download page].
+
+== Setup Archetype Editor
+. Run the Archetype Editor from the Desktop or Start Menu.
+. At the initial screen, open any existing archetype on your system e.g. one of the CKM archetypes previously downloaded
++
+ ..\Documents\openehr_training\remote\ckm\archetypes\cluster\OPENEHR-EHR-CLUSTER.device.v1.adl
++
+Or one of the sample archetypes provided at
++ 
+ ..\Users\Public\Documents\My Clinical Models\Sample Set\Archetypes
+
+=== Set the default Archetype Editor paths
+image:/images/ae_tool_setup.png[Archetype Editor setup,50%]
+
+Go to *_Tools->Options->File Locations_* and set both
+[none]
+* *_Archetype Repository path_*
+
+and
+[none]
+* *_Archetype XML Repository path_*
+
+to
+
+ ..\Documents\openehr_training
+
+=== Setup User Defaults
+image:/images/ae_user_setup2.png[User Setup,50%]
+
+Go to *_Tools->Options->User Defaults_* and enter your details.
+[horizontal]
+.e.g.
+Name:: Ian McNicoll
+Email:: mailto:ian@freshehr.com[ian@freshehr.com]
+Organisation:: freshEHR Clinical Informatics, UK
+
+== Download Archetypes
+The openEHR Foundation Clinical Knowledge Manager (CKM) is a web-based tool that stores openEHR clinical models that are developed collaboratively by the openEHR community and made freely available for others to use and copy.
+
+image:/images/ckm_export.png[CKM Bulk Export]
+
+Go to http://openehr.org/ckm[openEHR Foundation CKM] then from the top menu select *_Archetypes->Bulk Export_*.
+
+This will create a zip file with the latest versions of openEHR Foundation CKM archetypes.
+
+Download this zip file and unzip it into the remote/ckm folder you created earlier e.g. *_..\Documents\openehr_training\models\remote\ckm\archetypes_* making sure you preserve the folders.
+
+You should now have something like
+
+----
+openehr_training
+ local
+	archetypes
+	templates
+ remote
+	ckm
+	 archetypes
+	  cluster
+		composition
+		demographic
+		entry
+		section
+		readme.txt
+----
+
+Depending on how your zip program works you may need to move the unzipped folders around to match this pattern.
+
+=== CKM ‘GitHub mirror’
+Git is a common software version control tool. The CKM archetypes and templates are ‘mirrored’ out to a Git repository hosted at the https://github.com/openEHR/CKM-mirror[openEHR Github].
+
+image:/images/Octocat.png[GitHub]
+
+If you are familiar with using Git, you can clone the repository as `git clone https://github.com/openEHR/CKM-mirror.git`.
