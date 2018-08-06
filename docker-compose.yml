@@ -1,0 +1,8 @@
+version: '3'
+services:
+  platformdocs:
+    image: inidus/platformdocs:${TAG}-latest
+    # volumes:
+    #  - ./_site:/usr/share/nginx/html:ro
+    ports:
+     - "80:80"
