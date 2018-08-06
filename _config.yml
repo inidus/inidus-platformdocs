@@ -29,6 +29,7 @@ exclude:
   - 'Gemfile'
   - 'Gemfile.lock'
   - 'Dockerfile'
+  - 'docker-compose*'
   - '*.sh'
 
 feedback_subject_line: C4H documentation feedback
