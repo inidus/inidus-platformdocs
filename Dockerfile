@@ -1,17 +1,16 @@
-FROM ruby:2.1
-MAINTAINER mrafayaleem@gmail.com
+FROM ruby:2.1 AS inidus-ruby-base
 
 RUN apt-get clean \
-  && mv /var/lib/apt/lists /var/lib/apt/lists.broke \
-  && mkdir -p /var/lib/apt/lists/partial
-
-RUN apt-get update
-
-RUN apt-get install -y \
-    node \
-    python-pygments \
+  && rm -rf /var/lib/apt/lists \
+  && mkdir -p /var/lib/apt/lists \
+  && apt-get update \
+  && apt-get install -y \
+     node \
+     python-pygments \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/
+  && rm -rf /var/lib/apt/lists
+
+FROM inidus-ruby-base
 
 WORKDIR /tmp
 ADD Gemfile /tmp/
@@ -19,6 +18,7 @@ ADD Gemfile.lock /tmp/
 RUN bundle install
 
 VOLUME /src
+EXPOSE 3000
 EXPOSE 4000
 
 WORKDIR /src
