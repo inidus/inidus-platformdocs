@@ -17,7 +17,7 @@ Ehrscape API and associated 'environment' file, which contains settings for a sp
 Click the 'Run Postman Button' to import the Postman 'openEHR Ehrscape Clinical Data Repository' API collection
 and associated *_Operon Sandpit_* environment settings.
 
-image:https://run.pstmn.io/button.svg[Run in Postman,link=[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/205a8771a50cfa4716a9)
+image:https://run.pstmn.io/button.svg[Run in Postman,link=https://app.getpostman.com/run-collection/7c72f490ddb00c9fc0b8]
 
 This will automatically install the Ehrscape Collection and Operon Sandpit environment files.
 
